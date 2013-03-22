@@ -26,7 +26,7 @@ Vagrant::Config.run do |config|
        # You may also specify custom JSON attributes:
        chef.json = VAGRANT_JSON
        VAGRANT_JSON['run_list'].each do |recipe|
-        chef.add_role(recipe)
+        chef.add_recipe(recipe)
        end if VAGRANT_JSON['run_list']
 
        Dir["#{Pathname(__FILE__).dirname.join('roles')}/*.json"].each do |role|
